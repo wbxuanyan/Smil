@@ -1,0 +1,38 @@
+<smil  xmlns="http://www.w3.org/2000/SMIL20/CR/Language">
+	<head>
+		<transition id="wipe1" type="spiralWipe" dur="6s"/>
+		<transition id="wipe2" type="waterfallWipe" dur="6s"/>
+		<transition id="wipe3" type="barWipe" dur="6s"/>
+		<transition id="wipe4" type="ellipseWipe" dur="6s"/>
+		<transition id="wipe5" type="fanWipe" dur="6s"/>
+		<transition id="wipe6" type="fade" dur="3s"/>
+		
+		<layout>
+			<root-layout width="2700" height="1550" background-color="white"/>
+			<region id="head" width="2700" height="1550" fit="fill" z-index="0"/> 
+			<region id="Image1" top="10" left="10" width="500" height="1400" fit="meet" z-index="1"/> 
+			<region id="Image2" top="200" left="550" width="500" height="1400" fit="meet" z-index="2"/> 
+			<region id="Image3" top="400" left="1090" width="500" height="1400" fit="meet" z-index="3"/> 
+			<region id="Image4" top="600" left="1630" width="500" height="1400" fit="meet" z-index="4"/> 
+			<region id="Image5" top="800" left="2170" width="500" height="750" fit="fill" z-index="5"/> 
+			<region id="text_region" left="100" top="900" width="6000" height="800" />
+		</layout>
+	</head>
+	<body>
+		<seq>
+			<video src="2.rmvb" clip-begin="0s" clip-end="1min" region="head" dur="1min"/>
+			<par>
+				<img src="3.jpg" region="head"  transIn="wipe6" transOut="wipe2" dur="74s"/>
+				<audio src="2.wav" clip-begin="0s" clip-end="1:14"/>
+				<video src="test.txt" region="text_region" transIn="wipe3" transOut="wipe2" dur="15s"/>
+				<seq>
+				<img src="7.jpg" region="Image1"  transIn="wipe1" transOut="wipe1" dur="15s"/>
+				<img src="8.jpg" region="Image2"  transIn="wipe1" transOut="wipe1" dur="15s"/>
+				<img src="11.jpg" region="Image3" transIn="wipe1" transOut="wipe1" dur="15s"/>
+				<img src="12.jpg" region="Image4" transIn="wipe1" transOut="wipe1" dur="15s"/>
+				<img src="4.jpg" region="Image5" transIn="wipe1" transOut="wipe1" dur="14s"/>
+				</seq>
+			</par>
+		</seq>
+	</body>
+</smil>
